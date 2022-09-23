@@ -1,0 +1,26 @@
+<div class="jumbotron">
+    <h2>Account Form</h2>
+</div>
+<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+    <div class="form-group">
+        <label>Customer Id</label>
+        <input type="text" class="form-control form-control-lg" placeholder="Customer Id" 
+        name="customerId" #customerId="ngModel" [(ngModel)]="service.formData.customerId" 
+        [class.invalid]="customerId.invalid && customerId.touched" required>
+    </div>
+    <div class="form-group">
+        <label>Account Type</label>
+        <input type="text" class="form-control form-control-lg" placeholder="Account Type" 
+        name="accountType" #accountType="ngModel" [(ngModel)]="service.formData.accountType"
+        [class.invalid]="accountType.invalid && accountType.touched" required>
+    </div>
+    <div class="form-group">
+        <label>Balance</label>
+        <input type="text" class="form-control form-control-lg" placeholder="Balance" 
+        name="balance" #balance="ngModel" [(ngModel)]="service.formData.balance"
+        [class.invalid]="balance.invalid && balance.touched" required>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" [disabled]="form.invalid" type="submit">SUBMIT</button>
+    </div>
+</form>

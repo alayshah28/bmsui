@@ -1,0 +1,13 @@
+table{
+    width:80%;
+    margin:auto;
+    border: 1px solid black;
+    margin:2rem;
+}
+td,tr,th{
+    border: 1px solid black;
+}
+.table-wrapper{
+    display: flex;
+    justify-content: center;
+}

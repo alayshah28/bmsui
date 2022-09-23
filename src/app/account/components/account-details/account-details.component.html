@@ -1,0 +1,28 @@
+<div class="table-wrapper">
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>CustomerId</th>
+      <th>Account Type</th>
+      <th>Balance</th>
+      <th>Creation Date</th>
+      <th>Delete</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let account of service.list">
+      <td>{{account.customerId}}</td>
+      <td>{{account.accountType}}</td>
+      <td>{{account.balance}}</td>
+      <td>{{account.creationDate}}</td>
+      <td>
+          <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(account.accountNumber,account.accountType)"></i>
+      </td>
+      <td>
+          <i class="fa-solid fa-pen"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

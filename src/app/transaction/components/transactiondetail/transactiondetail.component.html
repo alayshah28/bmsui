@@ -1,0 +1,22 @@
+<div class="table-wrapper">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th>Transaction Id</th>
+          <th>Account Number</th>         
+          <th>Creation Date</th>
+          <th>Transaction Type</th>
+          <th>Transcation Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of service.list">
+          <td>{{transaction.transactionId}}</td>
+          <td>{{transaction.accountNo}}</td>
+          <td>{{transaction.date}}</td>
+          <td>{{transaction.transactionType}}</td>
+          <td>{{transaction.transactionAmount}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>

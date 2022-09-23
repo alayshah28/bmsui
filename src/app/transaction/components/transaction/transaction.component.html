@@ -1,0 +1,27 @@
+<div class="jumbotron">
+    <h2>Transaction Form</h2>
+</div>
+<form novalidate #transactionform="ngForm" (submit)="onSubmit(transactionform)">
+    <div class="form-group">
+        <label>Account Number</label>
+        <input type="text" class="form-control form-control-lg" placeholder="Account Number" 
+        name="accountNumber" #accountNo="ngModel" [(ngModel)]="service.formData.accountNo" 
+        [class.invalid]="accountNo.invalid && accountNo.touched" required>
+    </div>
+    <div class="form-group">
+        <label>Amount</label>
+        <input type="text" class="form-control form-control-lg" placeholder="Amount" 
+        name="amount" #transactionAmount="ngModel" [(ngModel)]="service.formData.transactionAmount"
+        [class.invalid]="transactionAmount.invalid && transactionAmount.touched" required>
+    </div>
+    <div class="form-group">
+        <label>Transaction Type</label>
+        <select name="demo" #transactionType="ngModel" [(ngModel)]="service.formData.transactionType">
+            <option selected="selected" value="Withdraw">Withdraw</option>
+            <option value="Deposit" value="Deposit" >Deposit</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" [disabled]="transactionform.invalid" type="submit">SUBMIT</button>
+    </div>
+</form>
